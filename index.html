@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <div id="progress" style="position:fixed;top:0;left:0;height:3px;background:#C4F042;width:0;z-index:200;"></div>
+
 
     <header class="header">
         <h1 class="title h1">AIR STORE</h1>
@@ -67,7 +69,7 @@
 
     </section>
 
-    <nav class="nav">
+    <nav class="nav reveal">
         <div class="container">
             <h3 class="title h3__nav">навигация по сайту</h2>
                 <div class="nav__wrapper">
@@ -86,7 +88,7 @@
 
     </nav>
 
-    <section class="catalogue" id="catalogue">
+    <section class="catalogue reveal" id="catalogue">
         <div class="container">
             <h3 class="title h3__catalogue">каталог товаров</h3>
             <div class="catalogue__wrapper">
@@ -157,7 +159,7 @@
 
     </section>
 
-    <section class="collections" id="collections">
+    <section class="collections reveal" id="collections">
         <div class="container">
             <h3 class="title h3__collections">коллекции</h3>
             <p class="title paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde explicabo
@@ -181,7 +183,7 @@
         </div>
     </section>
 
-    <section class="how-this-work" id="how-this-work">
+    <section class="how-this-work reveal" id="how-this-work">
         <div class="container">
             <h3 class="title h3__htw">как это работает?</h3>
             <div class="htw__info">
@@ -204,7 +206,7 @@
         </div>
     </section>
 
-    <section class="about-us" id="about-us">
+    <section class="about-us reveal" id="about-us">
         <div class="container">
             <h3 class="title h3__about-us">про нас</h3>
             <img src="https://cdn.abcotvs.com/dip/images/16522727_052325-wtvd-george-floyd-5-yrs-later.jpg"
@@ -229,7 +231,8 @@
         </div>
     </footer>
 
-
+    <button id="toTop" aria-label="Наверх">↑</button>
 </body>
+<script src="script.js"></script>
 
 </html>

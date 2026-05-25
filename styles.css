@@ -143,6 +143,23 @@ body {
 
 .catalogue__telegram-button {
     margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.catalogue__telegram-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.catalogue__telegram-button:hover::after {
+    left: 100%;
 }
 
 .paragraph {
@@ -254,4 +271,47 @@ hr {
 
 .footer__air-store {
     font-weight: 500;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#toTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #0A0A0B;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 200;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+}
+
+#toTop.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#toTop:hover {
+    background: var(--accent-dark);
+
+    box-shadow: 0 0 20px rgba(196, 240, 66, 0.4);
 }
