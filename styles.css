@@ -20,6 +20,7 @@
     --font-body: 'Inter', sans-serif;
 }
 
+
 body {
     background: var(--bg);
 }
@@ -314,4 +315,58 @@ hr {
     background: var(--accent-dark);
 
     box-shadow: 0 0 20px rgba(196, 240, 66, 0.4);
+}
+
+.collections__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 180px;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.coll-tile {
+    background: var(--surface-raised);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.5s ease;
+}
+
+/* размеры плитокгрида */
+.coll-tile--big {
+    grid-column: span 1;
+    grid-row: span 2;
+    /* высокая хуета */
+}
+
+.coll-tile--wide {
+    grid-column: span 2;
+    /* широкая хуета */
+}
+
+.coll-tile__emoji {
+    font-size: 36px;
+    margin-bottom: auto;
+}
+
+.coll-tile__title {
+    font-size: 20px;
+    margin: 0 0 6px;
+    color: var(--text);
+}
+
+.coll-tile__descr {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.coll-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px var(--accent);
 }
