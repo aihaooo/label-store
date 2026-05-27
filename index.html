@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIR STORE</title>
+    <title>57CLUB</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,142 +18,134 @@
 
 <body>
 
-    <div id="progress" style="position:fixed;top:0;left:0;height:3px;background:#C4F042;width:0;z-index:200;"></div>
+    <div id="progress"
+        style="position:fixed;top:0;left:0;height:3px;background:var(--accent-dark);width:0;z-index:200;">
+    </div>
 
 
     <header class="header">
-        <h1 class="title h1">AIR STORE</h1>
-        <h2 class="title h2">Свежевыжатый воздух из лёгких Джорджа Флойда</h2>
+        <h1 class="title h1">57CLUB</h1>
+        <div class="secondary__header">
+            <a href="#catalogue">мерч</a>
+            <a href="#collections">услуги</a>
+            <a href="#about-label">про лейбл</a>
+        </div>
     </header>
 
-    <section class="hero">
+    <section class="news reveal" id="news">
         <div class="container">
-            <h3 class="title h3__hero">почему выбирать именно <br><span class="hero__span">наш магазин для
-                    покупки</span>?</p>
+            <h3 class="title h3__news">новости</h3>
 
-                <hr>
-        </div>
+            <div class="news__list">
 
-    </section>
+                <article class="news__card">
+                    <span class="news__badge">НОВАЯ ХУЙНЯ</span>
+                    <div class="news__meta">
+                        <time class="news__date">27 мая 2026</time>
+                        <span class="news__tag">релиз</span>
+                    </div>
+                    <h4 class="title news__title">новый трек артиста Vova - "название"</h4>
+                    <p class="title news__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, ipsam
+                        reiciendis. на всех площадках.</p>
+                </article>
 
-    <section class="reasons">
-        <div class="container">
-            <div class="reasons__card-wrapper">
-                <div class="reasons__card">
-                    <div class="emoji">📈</div>
-                    <h3 class="title h3__reasons">лучшая стоимость<span class="hyphen">-</span><br> на всём рынке</h3>
-                    <p class="title paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, modi aut
-                        itaque enim quibusdam sint eos earum dolorem. Odit id voluptas sapiente accusamus alias quaerat
-                        quidem voluptatibus. Veniam, consequatur quo?</p>
-                </div>
+                <article class="news__card">
+                    <div class="news__meta">
+                        <time class="news__date">14 мая 2026</time>
+                        <span class="news__tag">событие</span>
+                    </div>
+                    <h4 class="title news__title">где бабки мне за сайт?</h4>
+                    <p class="title news__descr">Lorem ipsum dolor sit ametрасскажем подробнее ближе к дате.</p>
+                </article>
 
-                <div class="reasons__card">
-                    <div class="emoji">💯</div>
-                    <h3 class="title h3__reasons">идеальное качество</h3>
-                    <p class="title paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, modi aut
-                        itaque enim quibusdam sint eos earum dolorem. Odit id voluptas sapiente accusamus alias quaerat
-                        quidem voluptatibus. Veniam, consequatur quo?</p>
-                </div>
+                <article class="news__card">
+                    <div class="news__meta">
+                        <time class="news__date">2 мая 2026</time>
+                        <span class="news__tag">анонс</span>
+                    </div>
+                    <h4 class="title news__title">подписали нового артиста</h4>
+                    <p class="title news__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. In nisi
+                        distinctio tempore saepe, qui sunt. Consectetur doloremque hic ducimus aut pariatur, modi
+                        debitis quis magnam praesentium corrupti mollitia nobis fugit.</p>
+                </article>
 
-                <div class="reasons__card">
-                    <div class="emoji">✅</div>
-                    <h3 class="title h3__reasons">рекомендовано самим<br><span class="reasons__span">Джордж
-                            Флойдом</span>
-                    </h3>
-                    <p class="title paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, modi aut
-                        itaque enim quibusdam sint eos earum dolorem. Odit id voluptas sapiente accusamus alias quaerat
-                        quidem voluptatibus. Veniam, consequatur quo?</p>
-                </div>
             </div>
-            <hr>
         </div>
-
     </section>
 
-    <nav class="nav reveal">
-        <div class="container">
-            <h3 class="title h3__nav">навигация по сайту</h2>
-                <div class="nav__wrapper">
-                    <a href="#catalogue" class="nav__a">каталог</a>
-                    <a href="#collections" class="nav__a">коллекции</a>
-                    <a href="#how-this-work" class="nav__a">как это работает?</a>
-                    <a href="#about-us" class="nav__a">о нас</a>
-                </div>
-                <p class='title paragraph'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, aut rem
-                    mollitia
-                    tempore maxime enim quo voluptatum, ab cupiditate sequi nemo? Vel ipsam deserunt ex voluptatem fugit
-                    nemo id corrupti.</p>
-
-                <hr>
-        </div>
-
-    </nav>
 
     <section class="catalogue reveal" id="catalogue">
         <div class="container">
-            <h3 class="title h3__catalogue">каталог товаров</h3>
+
+            <hr>
+            <h3 class="title h3__catalogue">каталог мерча</h3>
             <div class="catalogue__wrapper">
                 <div class="catalogue__card">
-                    <div class="catalogue__air-image">💨</div>
+                    <div class="catalogue__air-image">👕</div>
                     <div class="catalogue__card-titles">
-                        <div class="title catalogue__card-h3">воздух мальчика-гея</div>
+                        <div class="title catalogue__card-h3">очень крутая футболка</div>
                         <div class="title catalogue__card-descr">Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit.
                             Et
                             minima itaque pariatur expedita impedit inventore fuga doloremque veniam necessitatibus
                             nesciunt
-                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.</div>
+                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.
+                        </div>
                         <div class="title catalogue__card-price">67812 грн</div>
                     </div>
 
                 </div>
 
                 <div class="catalogue__card">
-                    <div class="catalogue__air-image">💨</div>
+                    <div class="catalogue__air-image">👕</div>
                     <div class="catalogue__card-titles">
-                        <div class="title catalogue__card-h3">воздух обычный</div>
+                        <div class="title catalogue__card-h3">очень крутая зипка</div>
                         <div class="title catalogue__card-descr">Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit.
                             Et
                             minima itaque pariatur expedita impedit inventore fuga doloremque veniam necessitatibus
                             nesciunt
-                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.</div>
+                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.
+                        </div>
                         <div class="title catalogue__card-price">67812 грн</div>
                     </div>
 
                 </div>
 
                 <div class="catalogue__card">
-                    <div class="catalogue__air-image">💨</div>
+                    <div class="catalogue__air-image">👕</div>
                     <div class="catalogue__card-titles">
-                        <div class="title catalogue__card-h3">воздух Джорджа Флойда</div>
+                        <div class="title catalogue__card-h3">очень крутая майка</div>
                         <div class="title catalogue__card-descr">Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit.
                             Et
                             minima itaque pariatur expedita impedit inventore fuga doloremque veniam necessitatibus
                             nesciunt
-                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.</div>
+                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.
+                        </div>
                         <div class="title catalogue__card-price">67812 грн</div>
                     </div>
 
                 </div>
 
                 <div class="catalogue__card">
-                    <div class="catalogue__air-image">💨</div>
+                    <div class="catalogue__air-image">👕</div>
                     <div class="catalogue__card-titles">
-                        <div class="title catalogue__card-h3">воздух после штанги</div>
+                        <div class="title catalogue__card-h3">очень крутая тряпка</div>
                         <div class="title catalogue__card-descr">Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit.
                             Et
                             minima itaque pariatur expedita impedit inventore fuga doloremque veniam necessitatibus
                             nesciunt
-                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.</div>
+                            provident, deleniti vero omnis ratione sequi cupiditate dignissimos assumenda animi.
+                        </div>
                         <div class="title catalogue__card-price">67812 грн</div>
                     </div>
 
                 </div>
 
             </div>
+
             <a href="#" class="catalogue__telegram-button">Купить в Telegram</a>
             <hr>
         </div>
@@ -162,40 +154,40 @@
 
     <section class="collections reveal" id="collections">
         <div class="container">
-            <h3 class="title h3__collections">коллекции</h4>
-                <div class="collections__grid">
-                    <div class="coll-tile coll-tile--big reveal">
-                        <span class="coll-tile__emoji">🏳️‍🌈 </span>
-                        <h4 class="title coll-tile__title">голубой люкс</h4>
-                        <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                            laboriosam repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eum
-                            vel
-                            laborum hic dolores nesciunt mollitia voluptatum ipsam animi dignissimos nobis labore culpa
-                            sit
-                            quos voluptatibus earum. Et, a tenetur?</p>
-                    </div>
-
-                    <div class="coll-tile reveal">
-                        <span class="coll-tile__emoji">🏋️‍♂️</span>
-                        <h4 class="title coll-tile__title">штанга <span class="hero__span">lifestylë</span></h4>
-                        <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur.</p>
-                    </div>
-
-                    <div class="coll-tile reveal">
-                        <span class="coll-tile__emoji">💨</span>
-                        <h4 class="title coll-tile__title">нестареющая классика</h4>
-                        <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur.</p>
-                    </div>
-
-                    <div class="coll-tile coll-tile--wide reveal">
-                        <span class="coll-tile__emoji">💦</span>
-                        <h4 class="title coll-tile__title">золотой дождь</h4>
-                        <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Commodi
-                            assumenda voluptas debitis.</p>
-                    </div>
+            <h3 class="title h3__collections">наши услуги</h3>
+            <div class="collections__grid">
+                <div class="coll-tile coll-tile--big reveal">
+                    <span class="coll-tile__emoji">🎶 </span>
+                    <h4 class="title coll-tile__title">сведение битов</h4>
+                    <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+                        laboriosam repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eum
+                        vel
+                        laborum hic dolores nesciunt mollitia voluptatum ipsam animi dignissimos nobis labore culpa
+                        sit
+                        quos voluptatibus earum. Et, a tenetur?</p>
                 </div>
-                <hr>
+
+                <div class="coll-tile reveal">
+                    <span class="coll-tile__emoji">🎶</span>
+                    <h4 class="title coll-tile__title">биты</h4>
+                    <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+
+                <div class="coll-tile reveal">
+                    <span class="coll-tile__emoji">🎶</span>
+                    <h4 class="title coll-tile__title">запись треков</h4>
+                    <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+
+                <div class="coll-tile coll-tile--wide reveal">
+                    <span class="coll-tile__emoji">🎶</span>
+                    <h4 class="title coll-tile__title">ещё какая-то хуйня</h4>
+                    <p class="title coll-tile__descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Commodi
+                        assumenda voluptas debitis.</p>
+                </div>
+            </div>
+            <hr>
         </div>
     </section>
 
@@ -222,33 +214,84 @@
         </div>
     </section>
 
-    <section class="about-us reveal" id="about-us">
+    <section class="about-label reveal" id="about-label">
         <div class="container">
-            <h3 class="title h3__about-us">про нас</h3>
-            <img src="https://cdn.abcotvs.com/dip/images/16522727_052325-wtvd-george-floyd-5-yrs-later.jpg"
-                alt="George Floyd" class="george-floyd-img">
-            <p class="title paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis labore cumque
-                ratione quasi nesciunt quod consectetur, laboriosam numquam ex sunt modi! Deserunt nemo eligendi
-                repellat impedit ea <span class="hero__span">eos cupiditate maiores</span>! Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit.
-                Modi possimus in, mollitia, officiis aspernatur, cumque dignissimos minima excepturi veniam inventore
-                consequatur doloribus doloremque amet! <span class="hero__span">Inventore iusto dignissimos enim</span>.
-                Recusandae, unde? Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Tempore voluptas, corporis est odit sapiente, illum et
-                eligendi amet quo esse possimus, ullam laboriosam magnam doloremque aperiam quisquam voluptates error?
-                Quam? </p>
+            <div class="about-label__wrapper">
+                <h3 class="title h3__about-label">про лейбл</h3>
+
+                <p class="about-label__manifest">
+                    57 club - <span class="hero__span">Lorem ipsum</span>, dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <div class="about-label__text">
+                    <p class="title paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, magni explicabo. Voluptatum,
+                        quae.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi.
+                    </p>
+                    <p class="title paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quae. Lorem ipsum dolor sit
+                        amet consectetur, adipisicing elit. Voluptatum.
+                    </p>
+                </div>
+
+
+                <div class="artists__grid">
+
+                    <article class="artist__card">
+                        <div class="artist__photo">🎤</div>
+                        <div class="artist__info">
+                            <h5 class="title artist__name">Имя артиста</h5>
+                            <span class="artist__genre">жанр / стиль</span>
+                            <div class="artist__links">
+                                <a href="#" class="artist__link">Spotify</a>
+                                <a href="#" class="artist__link">Apple Music</a>
+                                <a href="#" class="artist__link">Instagram</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="artist__card">
+                        <div class="artist__photo">🎧</div>
+                        <div class="artist__info">
+                            <h5 class="title artist__name">имя артиста</h5>
+                            <span class="artist__genre">жанр / стиль</span>
+                            <div class="artist__links">
+                                <a href="#" class="artist__link">спотик</a>
+                                <a href="#" class="artist__link">эпл мьюзик</a>
+                                <a href="#" class="artist__link">инста</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="artist__card">
+                        <div class="artist__photo">🎹</div>
+                        <div class="artist__info">
+                            <h5 class="title artist__name">имя артиста</h5>
+                            <span class="artist__genre">жанр / стиль</span>
+                            <div class="artist__links">
+                                <a href="#" class="artist__link">спиток</a>
+                                <a href="#" class="artist__link">эпл мьюзик</a>
+                                <a href="#" class="artist__link">инста</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-wrapper">
-            <h4 class="title footer__h4 footer__air-store">Air Store</h4>
+            <h4 class="title footer__h4 footer__air-store">57club</h4>
             <h4 class="title footer__h4">© Bohdan Dovgal</h4>
         </div>
     </footer>
 
     <button id="toTop" aria-label="Наверх">↑</button>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
+
 
 </html>

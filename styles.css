@@ -9,15 +9,13 @@
 :root {
     --bg: #0A0A0B;
     --surface: #141414;
+    --surface-little-raised: #181818;
     --surface-raised: #212124;
-    --accent: #C4F042;
-    --accent-dark: #A8D62E;
+    --accent: #ebebe9;
+    --accent-dark: #e1e1e1;
     --text: #FAFAFA;
     --text-muted: #8A8A8F;
     --border: #2A2A2E;
-
-    --font-heading: 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
 }
 
 
@@ -33,58 +31,114 @@ body {
 
 .header {
     display: flex;
-    gap: 30px;
-    align-items: center;
-    ;
+    text-align: center;
+    flex-direction: column;
+    background: var(--surface);
+
+}
+
+.header h1 {
+    padding: 20px;
+}
+
+.secondary__header {
+    display: flex;
+    background: var(--surface-little-raised);
+    padding: 0;
+    height: 30px;
     justify-content: center;
-    background: var(--surface);
-    padding: 20px;
+    align-items: center;
+    gap: 20px;
+
+    a {
+        font-family: Figtree;
+        color: var(--text-muted);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    a:hover {
+        transform: translateY(1.5px);
+    }
 }
 
-.hero {
-    margin-top: 42px;
+.news {
+    margin-top: 40px;
 }
 
-.reasons__card {
-    background: var(--surface);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.reasons__card-wrapper {
+.news__list {
     display: flex;
     flex-direction: column;
-
-    gap: 20px;
+    gap: 16px;
+    margin-top: 24px;
 }
 
-.nav__wrapper {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
+.news__card {
+    position: relative;
+    /* база для бейджа NEW */
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.nav__a,
-.catalogue__telegram-button {
+.news__card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.news__meta {
     display: flex;
-    text-decoration: none;
-    width: 200px;
-    height: 50px;
-    background: var(--accent-dark);
-    border-radius: 10px;
-    border: solid 1.5x var(--accent);
-    font-family: JetBrains Mono;
-    color: #030303;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    transition: all 0.10s;
-    font-size: 15px;
+    gap: 12px;
+    margin-bottom: 8px;
 }
 
-.nav__a:hover {
-    transform: translateY(2px);
-    filter: brightness(90%);
+.news__date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.news__tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    padding: 2px 8px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+}
+
+.news__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.news__descr {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.news__badge {
+    position: absolute;
+    top: -8px;
+    right: 16px;
+    background: var(--accent);
+    color: #0A0A0B;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.h3__news {
+    font-weight: 550;
+    font-size: 2rem;
 }
 
 .title {
@@ -143,24 +197,60 @@ body {
 }
 
 .catalogue__telegram-button {
+    display: inline-block;
+    text-decoration: none;
+
     margin-top: 20px;
+
+
     position: relative;
+    padding: 16px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #fff;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6),
+        inset 0 -4px 12px rgba(255, 255, 255, 0.15);
+
+    cursor: pointer;
     overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.catalogue__telegram-button::after {
-    content: '';
+.catalogue__telegram-button::before {
+    content: "";
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.45) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: 100px 100px 50% 50%;
+    pointer-events: none;
 }
 
-.catalogue__telegram-button:hover::after {
-    left: 100%;
+.catalogue__telegram-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 40px rgba(58, 58, 58, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.7),
+        inset 0 -4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.catalogue__telegram-button:active {
+    transform: translateY(0) scale(0.98);
 }
 
 .paragraph {
@@ -247,11 +337,6 @@ hr {
     border: solid 1.5px var(--surface-raised);
     border-radius: 20px;
     padding: 20px;
-}
-
-.george-floyd-img {
-    width: 100%;
-    margin-top: 20px;
 }
 
 .footer {
@@ -369,6 +454,137 @@ hr {
 .coll-tile:hover {
     transform: translateY(-4px);
     box-shadow: 0 0 24px var(--accent);
+}
+
+.about-label {
+    padding: 60px 0;
+}
+
+.h3__about-label {
+    font-weight: 550;
+    font-size: 2rem;
+    margin-bottom: 32px;
+}
+
+.about-label__manifest {
+    font-family: 'Figtree', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 40px;
+    max-width: 600px;
+    /* короткая строка читается лучше? */
+}
+
+.about-label__text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.about-label__subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+/* сетка */
+.artists__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.artist__card {
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.artist__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px rgba(255, 255, 255);
+}
+
+.artist__photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* стандарт для аватаров артистов */
+    background: var(--surface-raised);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    /* для заглшуки,у ебала будет img */
+}
+
+.artist__info {
+    padding: 16px 20px 20px;
+}
+
+.artist__name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.artist__genre {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+}
+
+.artist__links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.artist__link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.artist__link:hover {
+    background: var(--accent);
+    color: #0A0A0B;
+}
+
+.about-label__wrapper {
+    border: 1px solid var(--surface-raised);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .about-label__text {
+        grid-template-columns: 1fr;
+    }
+
+    .artists__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-label__manifest {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
