@@ -2,8 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
-
 }
 
 :root {
@@ -16,10 +14,7 @@
     --text-muted: #8A8A8F;
     --border: #2A2A2E;
 
-    --font-heading: 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
 }
-
 
 body {
     background: var(--bg);
@@ -29,6 +24,9 @@ body {
     max-width: 700px;
     margin: 0 auto;
     padding: 0 20px;
+
+
+
 }
 
 .header {
@@ -217,7 +215,9 @@ hr {
 .catalogue__wrapper {
     display: flex;
     margin-top: 10px;
-    overflow-y: scroll;
+    overflow-x: scroll;
+    scrollbar-color: var(--accent) var(--surface);
+    scrollbar-width: thin;
     gap: 20px;
 
 }
