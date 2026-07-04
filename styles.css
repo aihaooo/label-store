@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg: #0A0A0B;
     --surface: #141414;
@@ -39,8 +43,64 @@ body {
 
 }
 
+.header__top {
+    position: relative;
+}
+
 .header h1 {
     padding: 20px;
+}
+
+.burger {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 26px;
+    height: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 210;
+}
+
+.burger__line {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+
+.burger__line:nth-child(1) {
+    top: 0;
+}
+
+.burger__line:nth-child(2) {
+    top: 9px;
+}
+
+.burger__line:nth-child(3) {
+    top: 18px;
+}
+
+.burger.open .burger__line:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
+}
+
+.burger.open .burger__line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open .burger__line:nth-child(3) {
+    top: 9px;
+    transform: rotate(-45deg);
 }
 
 .secondary__header {
@@ -55,11 +115,58 @@ body {
     a {
         font-family: Figtree;
         color: var(--text-muted);
+        text-decoration: none;
         transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     a:hover {
         transform: translateY(1.5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .secondary__header {
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--surface-little-raised);
+        transition: max-height 0.3s ease;
+    }
+
+    .secondary__header.open {
+        max-height: 240px;
+        padding: 8px 0 14px;
+    }
+
+    .secondary__header a {
+        display: block;
+        text-align: center;
+        padding: 13px 20px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0;
+        transition: opacity 0.25s ease, color 0.2s ease, letter-spacing 0.2s ease;
+    }
+
+    .secondary__header a:hover,
+    .secondary__header a:active {
+        color: var(--text);
+        letter-spacing: 0.18em;
+        transform: none;
+    }
+
+    .secondary__header.open a {
+        opacity: 1;
+        transition-delay: 0.1s;
     }
 }
 
@@ -190,6 +297,10 @@ body {
 
 .catalogue__card-descr {
     line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .catalogue__card-price {
@@ -280,15 +391,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: wrap;
-    height: 30 px;
+    width: 100%;
+    height: 30px;
     border-radius: 20px;
+    padding: 18px 12px;
 
     background: var(--accent-dark);
 
     font-family: JetBrains Mono;
     color: black;
     margin-top: 20px;
+}
+
+.htw__info {
+    text-align: center;
 }
 
 .hyphen {
@@ -309,7 +425,7 @@ hr {
 .catalogue__wrapper {
     display: flex;
     margin-top: 10px;
-    overflow-x: scroll;
+    overflow-x: auto;
     scrollbar-color: var(--accent) var(--surface);
     scrollbar-width: thin;
     gap: 20px;
@@ -319,10 +435,14 @@ hr {
 .catalogue__card {
     display: flex;
     background: var(--surface);
+    border-radius: 12px;
     padding: 20px;
-    width: 100%;
+    min-width: 380px;
+    width: 380px;
+    flex-shrink: 0;
     height: 200px;
     gap: 20px;
+    overflow: hidden;
 }
 
 .catalogue__air-image {
@@ -330,8 +450,12 @@ hr {
     font-size: 7rem;
     justify-content: center;
     align-items: center;
-    width: 100vh;
-    height: 100%;
+    width: 90px;
+    min-width: 90px;
+    align-self: flex-start;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    flex-shrink: 0;
     background: var(--surface-raised);
     border-radius: 5px;
 }
@@ -407,8 +531,7 @@ hr {
 
 #toTop:hover {
     background: var(--accent-dark);
-
-    box-shadow: 0 0 20px rgba(196, 240, 66, 0.4);
+    box-shadow: 0 0 20px rgba(235, 235, 233, 0.4);
 }
 
 .collections {
@@ -598,9 +721,7 @@ hr {
     .about-label__manifest {
         font-size: 1.5rem;
     }
-}
 
-@media (max-width: 768px) {
     .collections__grid {
         grid-template-columns: 1fr;
     }
