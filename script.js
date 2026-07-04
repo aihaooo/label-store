@@ -51,3 +51,18 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+const themeToggle = document.getElementById('themeToggle');
+const rootEl = document.documentElement;
+
+function updateThemeIcon() {
+    themeToggle.textContent = rootEl.dataset.theme === 'light' ? '🌙' : '☀️';
+}
+
+updateThemeIcon();
+
+themeToggle.addEventListener('click', () => {
+    rootEl.dataset.theme = rootEl.dataset.theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', rootEl.dataset.theme);
+    updateThemeIcon();
+});
+

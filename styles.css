@@ -18,12 +18,52 @@ html {
     --text: #FAFAFA;
     --text-muted: #8A8A8F;
     --border: #2A2A2E;
+    --accent-contrast: #0A0A0B;
+    --glow: rgba(235, 235, 233, 0.4);
+}
+
+:root[data-theme="light"] {
+    --bg: #F4F4F2;
+    --surface: #FFFFFF;
+    --surface-little-raised: #ECECEA;
+    --surface-raised: #E4E4E1;
+    --accent: #1A1A1C;
+    --accent-dark: #2B2B2E;
+    --text: #111113;
+    --text-muted: #6B6B70;
+    --border: #D9D9DD;
+    --accent-contrast: #FAFAFA;
+    --glow: rgba(20, 20, 20, 0.18);
 }
 
 /* s */
 
 body {
     background: var(--bg);
+    transition: background 0.3s ease;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    background: var(--surface-raised);
 }
 
 .container {
@@ -236,7 +276,7 @@ body {
     top: -8px;
     right: 16px;
     background: var(--accent);
-    color: #0A0A0B;
+    color: var(--accent-contrast);
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     font-weight: 700;
@@ -366,6 +406,19 @@ body {
     transform: translateY(0) scale(0.98);
 }
 
+:root[data-theme="light"] .catalogue__telegram-button {
+    color: #111113;
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="light"] .catalogue__telegram-button::before {
+    opacity: 0.5;
+}
+
 .paragraph {
     color: var(--text-muted);
     margin-top: 10px;
@@ -399,7 +452,7 @@ body {
     background: var(--accent-dark);
 
     font-family: JetBrains Mono;
-    color: black;
+    color: var(--accent-contrast);
     margin-top: 20px;
 }
 
@@ -512,7 +565,7 @@ hr {
     border: none;
     border-radius: 50%;
     background: var(--accent);
-    color: #0A0A0B;
+    color: var(--accent-contrast);
     font-size: 22px;
     cursor: pointer;
     z-index: 200;
@@ -531,7 +584,7 @@ hr {
 
 #toTop:hover {
     background: var(--accent-dark);
-    box-shadow: 0 0 20px rgba(235, 235, 233, 0.4);
+    box-shadow: 0 0 20px var(--glow);
 }
 
 .collections {
@@ -644,7 +697,7 @@ hr {
 
 .artist__card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 0 24px rgba(255, 255, 255);
+    box-shadow: 0 0 24px var(--glow);
 }
 
 .artist__photo {
@@ -700,7 +753,7 @@ hr {
 
 .artist__link:hover {
     background: var(--accent);
-    color: #0A0A0B;
+    color: var(--accent-contrast);
 }
 
 .about-label__wrapper {
